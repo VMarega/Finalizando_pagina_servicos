@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg justify-content-center">
+            <div class="container-fluid">
+                <img class="navbar-brand" id="logo" src="img/logo.png" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav text-uppercase align-items-center fs-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicosdelimpeza.html">Serviços de Descontaminação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assistencia.html">Assistência Técnica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Locação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">(61)99999-5809</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="containerServicos">
+        <h1 class="m-5">ESCOLHA OS ITENS QUE DESEJA DESCONTAMINAR</h1>
+        <div class="mb-5">
+            <div class="d-flex container justify-content-center mb-3">
+                <a href="checkout.html"
+                    class="btn btn-light d-flex flex-column rounded-4 justify-content-center align-items-center">
+                    CHECKOUT
+                </a>
+            </div>
+            <div>
+                <section>
+                    <form action="">
+                        <label for="pacote">Valor R$</label>
+                        <input class="btn btn-light rounded-4" type="text" class="valor-final" value="00" data-valor>
+                    </form>
+                </section>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap container">
+            <div class="align-content-start">
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#sofaModal"
+                    style="width: 300px; height:300px" id="sofa">
+                    <img src="img/icons8-sala-de-estar-100.png" class="img-fluid">
+                    <label for="sofa">Sofá</label>
+                </button>
+            </div>
+            <div class="modal" id="sofaModal" tabindex="-1" aria-labelledby="sofaModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="sofaModalLabel">SOFÁ</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-item">
+                                <article class="m-5" id="buttons">
+                                    <div class="tamanhoSofa">
+                                        <h5 class="mb-5">Nº DE PESSOAS SENTADAS</h5>
+                                        <div class="mb-5" id="sofa-size">
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="option1" autocomplete="off" value="1">
+                                            <label class="btn rounded-circle lugares-sofa" for="option1">2</label>
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="option2" autocomplete="off" value="1.5">
+                                            <label class="btn rounded-circle lugares-sofa" for="option2">3</label>
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="option3" autocomplete="off" value="2">
+                                            <label class="btn rounded-circle lugares-sofa" for="option3">4</label>
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="option4" autocomplete="off" value="2.5">
+                                            <label class="btn rounded-circle lugares-sofa" for="option4">5</label>
+                                        </div>
+                                    </div>
+                                    <div class="caracteristicasSofa">
+                                        <h5 class="mb-5">CARACTERISTICAS</h5>
+                                        <div class="mb-5">
+                                            <input type="radio" class="btn-check" data-sofa-caract name="options" id="optionC1" autocomplete="off" value="0.5">
+                                            <label class="btn m-3 lugares-sofa" for="optionC1">Sofá Retrátil</label>
+                                            <input type="radio" class="btn-check" data-sofa-caract name="options" id="optionC2" autocomplete="off" value="0.5">
+                                            <label class="btn m-3 lugares-sofa" for="optionC2">Sofá de Canto</label>
+                                            <input type="radio" class="btn-check" data-sofa-caract name="options" id="optionC3" autocomplete="off" value="0.5">
+                                            <label class="btn m-3 lugares-sofa" for="optionC3">Sofá com Chaise</label>
+                                            <input type="radio" class="btn-check" data-sofa-caract name="options" id="optionC4" autocomplete="off" value="0.5">
+                                            <label class="btn m-3 lugares-sofa" for="optionC4">Sofá Cama</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input hig-profunda" id="descontaminacao">
+                                                <label data-descontaminacao for="descontaminacao">Descontaminação
+                                                Profunda</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" data-botao-lavagem id="lavacao" >
+                                                <label class="form-check-label" for="lavacao">Remoção de Manchas</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </article>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal" >Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#camaModal"
+                    style="width: 300px; height:300px" id="cama">
+                    <img src="img/icons8-cama-100.png" class="img-fluid">
+                    <label for="cama">Cama</label>
+                </button>
+            </div>
+            <div class="modal" id="camaModal" tabindex="-1" aria-labelledby="camaModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="camaModalLabel">CAMA</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-item">
+                                <article class="m-5" id="buttons">
+                                    <div class="tamanhosColchao">
+                                        <h5 class="mb-5">Tamanho</h5>
+                                        <div class="mb-5" id="colchao-size">
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="optionCama1" autocomplete="off" value="1">
+                                            <label class="btn rounded-circle lugares-sofa" for="optionCama1">Solteiro</label>
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="optionCama2" autocomplete="off" value="1.5">
+                                            <label class="btn rounded-circle lugares-sofa" for="optionCama2">Casal</label>
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="optionCama3" autocomplete="off" value="2">
+                                            <label class="btn rounded-circle lugares-sofa" for="optionCama3">Queen</label>
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="Cama4" autocomplete="off" value="2.5">
+                                            <label class="btn rounded-circle lugares-sofa" for="Cama4">King</label>
+                                            <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="optionCama4" autocomplete="off" value="2.75">
+                                            <label class="btn rounded-circle lugares-sofa" for="optionCama4">Super-King</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input hig-profunda2" id="descontaminacao2">
+                                                <label data-descontaminacao for="descontaminacao2">Descontaminação
+                                                Profunda</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" data-botao-lavagem id="lavacao2" >
+                                                <label class="form-check-label" for="lavacao2">Remoção de Manchas</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </article>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#tapeteModal"
+                    style="width: 300px; height:300px" id="tapete">
+                    <img src="img/icons8-rug-100.png" class="img-fluid d-block">
+                    <label for="tapete">Tapete</label>
+                </button>
+            </div>
+            <div class="modal" id="tapeteModal" tabindex="-1" aria-labelledby="tapeteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="tapeteModalLabel">TAPETE</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-item">
+                                <article class="m-5" id="buttons">
+                                    <div class="justify-content-center">
+                                        <h5>TAMANHO</h5>
+                                        <div class="bd-example-snippet bd-code-snippet ">
+                                            <div class="bd-example mt-5 mb-5">
+                                                <form action="post">
+                                                    <label class="d-block fs-5 m-3" for="larguraTapete">Largura</label>
+                                                    <input type="number" id="largura-tapete" placeholder="em m">
+                                                    <label class="d-block fs-5 m-3"
+                                                        for="comprimentoTapete">Comprimento</label>
+                                                    <input type="number" id="comprimento-tapete" placeholder="em m">
+                                                </form>
+                                                <div class="area">
+                                                    <label class="d-block fs-5 m-3 metragem" for="area-tapete">Área</label>
+                                                    <input type="number" id="area-tapete" data-item-area>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input hig-profunda3" id="descontaminacao3">
+                                                <label class="form-check-label" for="descontaminacao3">Descontaminação
+                                                Profunda</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" data-lavagem-area id="lavacao3">
+                                                <label class="form-check-label" for="lavacao3">Remoção de Manchas</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </article>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal">Adidcionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#carpeteModal"
+                    style="width: 300px; height:300px" id="carpete">
+                    <img src="img/icons8-tapete-100.png" class="img-fluid d-block">
+                    <label for="carpete">Carpete</label>
+                </button>
+            </div>
+            <div class="modal" id="carpeteModal" tabindex="-1" aria-labelledby="carpeteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="carpeteModalLabel">CARPETE</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-item">
+                                <article class="m-5" id="buttons">
+                                    <div class="justify-content-center">
+                                        <h5>TAMANHO</h5>
+                                        <div class="bd-example-snippet bd-code-snippet ">
+                                            <div class="bd-example mt-5 mb-5">
+                                                <div class="area">
+                                                    <label for="" class="d-block fs-5 m-3">Área</label>
+                                                    <input type="number" id="area-carpete"
+                                                        placeholder="Em m², digite apenas nº" data-item-area>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" id="descontaminacao4">
+                                                <label class="form-check-label hig-profunda4" for="descontaminacao4">Descontaminação Profunda</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" data-lavagem-area id="lavacao4">
+                                                <label class="form-check-label" for="lavacao4">Remoção de Manchas</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </article>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#carrinhoModal"
+                    style="width: 300px; height:300px" id="carrinho">
+                    <img src="img/icons8-carrinho-de-bebê-100.png" class="img-fluid d-block">
+                    <label for="carrinho">Carrinho</label>
+                </button>
+            </div>
+            <div class="modal" id="carrinhoModal" tabindex="-1" aria-labelledby="carrinhoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="carrinhoModalLabel">CARRINHO</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-item">
+                                <article class="m-5" id="buttons">
+                                    <div>
+                                        <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="optionCarrinho" autocomplete="off" value="1.1">
+                                        <label class="btn rounded-circle lugares-sofa" for="optionCarrinho">Carrinho de Bebê</label>
+                                    </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input hig-profunda5" id="descontaminacao5">
+                                                <label class="form-check-label" for="descontaminacao5">Descontaminação Profunda</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" id="lavacao5">
+                                                <label class="form-check-label" for="lavacao5">Remoção de Manchas</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </article>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#poltronaModal"
+                    style="width: 300px; height:300px" id="poltrona">
+                    <img src="img/icons8-poltrona-100.png" class="img-fluid d-block">
+                    <label for="poltrona">Poltrona</label>
+                </button>
+            </div>
+            <div class="modal" id="poltronaModal" tabindex="-1" aria-labelledby="poltronaModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="poltronaModalLabel">POLTRONA</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-item">
+                                <article class="m-5" id="buttons">
+                                    <h5>Quantas Poltronas Deseja Adicionar?</h5>
+                                    <div>
+                                        <label class="btn lugares-sofa" for="optionPoltrona">Quantidade</label>
+                                        <input type="number"  data-item-pacote name="options" id="optionPoltrona" autocomplete="off" data-item-lavagem3>
+                                    </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input hig-profunda6" id="descontaminacao6">
+                                                <label class="form-check-label" for="descontaminacao6">Descontaminação
+                                                    Profunda</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" id="lavacao6">
+                                                <label class="form-check-label" for="lavacao6">Remoção de Manchas</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </article>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#livrosModal"
+                    style="width: 300px; height:300px" id="livros">
+                    <img src="img/icons8-livros-100.png" class="img-fluid d-block">
+                    <label for="livros">Livros</label>
+                </button>
+            </div>
+            <div class="modal" id="livrosModal" tabindex="-1" aria-labelledby="livrosModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="livrosModalLabel">LIVROS</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <article class="m-5" id="buttons">
+                                <form action="" class="form-item">
+                                    <div class="justify-content-center">
+                                        <h5>TAMANHO DA ESTANTE</h5>
+                                        <div class="bd-example-snippet bd-code-snippet ">
+                                            <div class="bd-example mt-5 mb-5">
+                                                <form action="post">
+                                                    <label class="d-block fs-5 m-3" for="larguraLivros">Largura</label>
+                                                    <input type="number" name="larguraLivros" id="larguraLivros" placeholder="em m">
+                                                    <label class="d-block fs-5 m-3" for="comprimentoLivros">Altura</label>
+                                                    <input type="number" name="comprimentoLivros" id="comprimentoLivros" placeholder="em m">
+                                                </form>
+                                                <div class="area">
+                                                    <label for="areaLivros" class="d-block fs-5 m-3">Área</label>
+                                                    <input type="number" name="areaLivros" class="areaLivros" data-item-area2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" checked id="descontaminacao9">
+                                                <label class="form-check-label hig-profunda9" for="descontaminacao9">Descontaminação Profunda</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </article>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#bercoModal"
+                    style="width: 300px; height:300px" id="berco">
+                    <img src="img/icons8-berço-100.png" class="img-fluid d-block">
+                    <label for="berco">Berço</label>
+                </button>
+            </div>
+            <div class="modal" id="bercoModal" tabindex="-1" aria-labelledby="bercoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="bercoModalLabel">BERÇO</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-item">
+                                <article class="m-5" id="buttons">
+                                    <div>
+                                        <input type="radio" class="btn-check" data-item-lavagem data-item-pacote name="options" id="optionBerco" autocomplete="off" value="1.1">
+                                        <label class="btn lugares-sofa" for="optionBerco">Berço</label>
+                                    </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input hig-profunda7" id="descontaminacao7">
+                                                <label class="form-check-label" for="descontaminacao7">Descontaminação
+                                                    Profunda</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" name="radios" class="form-check-input" id="lavacao7">
+                                                <label class="form-check-label" for="lavacao7">Remoção de Manchas</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </article>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button
+                    class="btn btn-light d-flex flex-column border rounded-4 justify-content-center align-items-center"
+                    class="itemDesc" data-bs-toggle="modal" data-bs-target="#arCondicionadoModal"
+                    style="width: 300px; height:300px" id="arCondicionado">
+                    <img src="img/icons8-condicionador-de-ar-100.png" class="img-fluid d-block">
+                    <label for="arCondicionado">Ar Condicionado</label>
+                </button>
+            </div>
+            <div class="modal" id="arCondicionadoModal" tabindex="-1" aria-labelledby="arCondicionadoModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="arCondicionadoModalLabel">AR CONDICIONADO</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <article class="m-5" id="buttons">
+                                <form action="" class="form-item">
+                                    <h5>Quantas Poltronas Deseja Adicionar?</h5>
+                                        <div>
+                                            <label class="btn lugares-sofa" for="optionAr">Quantidade</label>
+                                            <input type="number"  data-item-pacote name="options" id="optionAr" autocomplete="off" value="0">
+                                        </div>
+                                    <div>
+                                        <h5>SERVIÇOS</h5>
+                                        <fieldset class="mb-3">
+                                            <div class="form-check mb-3">
+                                                <input type="checkbox" name="radios" class="form-check-input hig-profunda8"
+                                                id="descontaminacao8" checked>
+                                                <label class="form-check-label" for="descontaminacao8">Descontaminação
+                                                Profunda</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </article>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary adicionar" data-bs-dismiss="modal">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </main>
+    <div class="container-fluid p-0">
+        <footer class="py-3 ">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted btn">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted btn ">Serviços de Descontaminação</a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted btn ">Locação</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted btn ">Depoimentos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted btn ">FAQs</a></li>
+            </ul>
+            <div class="align-content-center">
+                <p class="text-center text-muted">&copy; 2023 Rainbow Brasilia</p>
+                <a href="" class="nav-link">
+                    <p class="text-center text-muted">&copy; Criado por Vinicius Marega</p>
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+    <script src="pacoteDeHigProfunda.js"></script>
+</body>
+
+</html>

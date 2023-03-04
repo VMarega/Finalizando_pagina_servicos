@@ -1,0 +1,6 @@
+cliente clica no item
+abre o modal
+cliente seleciona o tamanho
+cada tamanho tem um valor de item para o pacote
+se o cliente selecionar descontaminação profunda soma o item ao pacote
+se o cliente selecionar remoção de manchas soma o valor baseado nos itens

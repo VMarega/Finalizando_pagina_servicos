@@ -29,6 +29,17 @@ let valorLavagem6 = 275;
 const caract = document.querySelectorAll("[data-sofa-caract]")
 let acrescimoCaract = 0;
 let custoMetroQuadrado = 30;
+let objetoHigProfunda = {
+    id:[],
+    pacote:[],
+    itens:[],
+    valor:[]
+}
+let objetoLavagem = {
+    id:[],
+    iten:[],
+    valor:[]
+}
 
 caract.forEach((elemento)=>{
     elemento.addEventListener("change", (evento)=>{

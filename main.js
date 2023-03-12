@@ -18,6 +18,8 @@ const poltronaLavagem = document.querySelector("#lavacao6");
 const bercoLavagem = document.querySelector("#lavacao7")
 const preco = document.querySelector("[data-valor]");
 const formItem = document.querySelectorAll(".form-item");
+let divCarrinho = '<div class="d-none">' + '<li class="list-group-item d-flex justify-content-between lh-sm">' + '<div>' + '<h6 class="my-0"></h6>' + '<small class="text-muted"></small>' + '<span class="text-muted"></span>' + '</div>' + '</li>' +' </div>';
+let itensCarrinho = document.querySelector("[data-itens-carrinho]");
 let precoDoItem = 0;
 let unitarioPoltrona = 80;
 let valorLavagem1 = 90;
@@ -188,8 +190,9 @@ elemento.addEventListener("click", evento=>{
             preco.value = parseInt(preco.value) + 0;
             formItem.forEach((elemento)=>{elemento.reset();})
         }
+        itensCarrinho.appendChild(divCarrinho);
     } 
-    
+       
     else {
         alert(`Você deve informar um serviço para o item adicionado`)
     }

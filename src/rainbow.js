@@ -26,6 +26,12 @@ opcoes.forEach((elemento) => {
             "Objeto": objeto,
             "Valor para o pacote": quantidade.value + "m²"
         }
+    } else if (objeto === "Estante de Livros"){
+        montaPacoteHigProfunda(quantidade.value/2);
+        itemAtual = {
+            "Objeto": objeto,
+            "Valor para o pacote": quantidade.value + "m²"
+        }
     } else {
         montaPacoteHigProfunda(quantidade.value)
         itemAtual = {
@@ -50,9 +56,25 @@ largTapete.addEventListener("change", (evento)=>{
 compTapete.addEventListener("change", (evento)=>{
     calculaAreaDoTapete();
 })
-// fim tapete e carpete
+// fim tapete
+// Calculo estante de Livros
+const largLivros = document.querySelector("#larguraLivros");
+const compLivros = document.querySelector("#comprimentoLivros");
+const areaLivros = document.querySelector(".areaLivros");
 
+function calculaAreaEstante () {
+    areaLivros.value = largLivros.value * compLivros.value;
+    areaLivros.dispatchEvent(eventoArea);
+}
 
+largLivros.addEventListener("change", (evento)=>{
+    calculaAreaEstante();
+})
+
+compLivros.addEventListener("change", (evento)=>{
+    calculaAreaEstante();
+})
+//FIM LIVROS
 
 function montaPacoteHigProfunda(tamanho){
     pacoteAtual = parseInt(tamanho);

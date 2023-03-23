@@ -375,38 +375,35 @@
                             <h1 class="modal-title fs-5" id="livrosModalLabel">LIVROS</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <article class="m-5" id="buttons">
-                                <form action="" class="form-item">
+                        <form action="" data-form>
+                            <div class="modal-body">
+                                <article class="m-5" id="buttons">
                                     <div class="justify-content-center">
                                         <h5>TAMANHO DA ESTANTE</h5>
                                         <div class="bd-example-snippet bd-code-snippet ">
                                             <div class="bd-example mt-5 mb-5">
-                                                <form action="post">
-                                                    <label class="d-block fs-5 m-3" for="larguraLivros">Largura</label>
-                                                    <input type="number" name="larguraLivros" id="larguraLivros"
-                                                        placeholder="em m">
-                                                    <label class="d-block fs-5 m-3"
-                                                        for="comprimentoLivros">Altura</label>
-                                                    <input type="number" name="comprimentoLivros" id="comprimentoLivros"
-                                                        placeholder="em m">
-                                                </form>
+                                                <label class="d-block fs-5 m-3" for="larguraLivros">Largura</label>
+                                                <input type="number" name="larguraLivros" id="larguraLivros"
+                                                    placeholder="em m">
+                                                <label class="d-block fs-5 m-3" for="comprimentoLivros">Altura</label>
+                                                <input type="number" name="comprimentoLivros" id="comprimentoLivros"
+                                                    placeholder="em m">
                                                 <div class="area">
                                                     <label for="areaLivros" class="d-block fs-5 m-3">Área</label>
                                                     <input type="number" name="areaLivros" class="areaLivros"
-                                                        data-item-area2>
+                                                        data-item="Estante de Livros">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                            </article>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary adicionar"
-                                data-bs-dismiss="modal">Adicionar</button>
-                        </div>
+                                </article>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="adicionar"
+                                    data-bs-dismiss="modal">Adicionar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -469,8 +466,8 @@
                                     <h5>Quantos Aparelhos Deseja Adicionar?</h5>
                                     <div>
                                         <label class="btn lugares-sofa" for="optionAr">Quantidade</label>
-                                        <input type="number" data-item="Ar-Condicionado" name="options" id="optionAr" autocomplete="off"
-                                            value="0">
+                                        <input type="number" data-item="Ar-Condicionado" name="options" id="optionAr"
+                                            autocomplete="off" value="0">
                                     </div>
                                 </article>
                             </div>

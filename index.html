@@ -10,15 +10,19 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="cart.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg justify-content-center">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <img class="navbar-brand" id="logo" src="img/logo.png" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -27,7 +31,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav text-uppercase align-items-center fs-5">
+                    <ul class="navbar-nav text-uppercase fs-5">
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
@@ -43,17 +47,55 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">(61)99999-5809</a>
                         </li>
+                        <li class="nav-item d-flex flex-wrap">
+                            <button class="btn" onclick="toggleCart()">Toggle Cart</button>   
+                        <li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <div class="justify-content-end">
+        <div class="sidecart bg-light text-center">
+            <ul class="nav flex-column">
+                <div class="h4 m-0 px-4 text-center">
+                    Carrinho
+                    <div class="d-inline" onclick="toggleCart()"><i
+                            class="far text-success float-right fa-arrow-alt-circle-right mt-1"></i></div>
+                    </div>
+                <li class="nav-link d-flex flex-wrap flex-row">
+                    <div class="col-12 h5 text-center p-0">
+                    </div>
+                    <div class="col-4 p-0">
+                    </div>
+                    <div class="col-2 text-light justify-content-around d-flex flex-column">
+                        <i class="fas fa-plus"></i>
+                        <div class="product-quantity m-0 p-0 h5">2</div>
+                        <i class="fas fa-minus"></i>
+                    </div>
+                    <div class="sidecart-price pl-0 col-6 text-right d-flex flex-wrap text-light">
+                        <div class="text-right text-dark d-flex flex-row justify-content-end align-items-center h6 m-0 p-0">
+                            Remover <span class="h5 ml-2 m-0 p-0 "><b>X</b></span></div>
+                        <div class="product-price">R$ 1200,00</div>
+                        <div class=""><span class="text-dark"><b>Total</b></span> <span class="product-price-total">R$
+                                2400,00</span></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="text-light h5 text-left mx-3">Valor Final: <span class="text-success" id="sidecart-total">R$
+                    7.220,00</span></div>
+            <div class="p-2">
+                <button type="button" class="btn btn-success w-100">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
     <main class="containerServicos">
         <h1 class="m-5">ESCOLHA O SERVIÇO QUE DESEJA</h1>
         <div class="mb-5 flex-wrap align-content-center container">
             <div class="mb-3">
-                <a href="checkout.html"
-                    class="btn btn-light rounded-4">
+                <a href="checkout.html" class="btn btn-light rounded-4">
                     CHECKOUT
                 </a>
             </div>
@@ -112,6 +154,7 @@
         </footer>
     </div>
     <script src="./src/main.js"></script>
+    <script src="./src/cart.js"></script>
 </body>
 
 </html>

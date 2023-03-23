@@ -1,9 +1,8 @@
 const form = document.querySelectorAll("[data-form]");
 const opcoes = document.querySelectorAll("[data-item]")
-const itemAreaDoPacote = document.querySelectorAll("[data-item-area]"); //tapete e carpete
 const itemAreaDoPacote2 = document.querySelectorAll("[data-item-area2]"); //para a estante de livros
 itensEscolhidos = [];
-let itemAtual = [];
+let itemAtual = {};
 let pacoteAtual = 0;
 let pacote5itens = 200;
 let sextoItem = 40;
@@ -25,20 +24,21 @@ opcoes.forEach((elemento) => {
             "Objeto": objeto,
             "Valor para o pacote": quantidade.value
         }
-        console.log(evento)
         montaPacoteHigProfunda(evento.target.value);
-        return pacoteAtual;
-
     })
 })
 
-// cálculo da área do tapete automático
+// cálculo da área do tapete e carpete automático
 let compTapete = document.querySelector("#comprimento-tapete");
 let largTapete = document.querySelector("#largura-tapete");
 let metragem = document.querySelector("#area-tapete");
-function calculaAreaDoTapete (){
-    metragem.value = compTapete.value * largTapete.value;
-    montaPacoteHigProfunda(metragem.value/4);
+function calculaAreaDoTapete (e){
+   e.value = compTapete.value * largTapete.value;
+    montaPacoteHigProfunda(e.value/4);
+    itemAtual = {
+        "Objeto": e.dataset.item,
+        "Valor para o pacote": parseInt(e.value/4)
+    }
 }
 largTapete.addEventListener("change", (evento)=>{
     calculaAreaDoTapete();
@@ -46,7 +46,7 @@ largTapete.addEventListener("change", (evento)=>{
 compTapete.addEventListener("change", (evento)=>{
     calculaAreaDoTapete();
 })
-
+// fim tapete e carpete
 
 
 
@@ -58,20 +58,9 @@ function montaPacoteHigProfunda(tamanho){
 itemAreaDoPacote2.forEach((elemento)=>{
     elemento.addEventListener("change", (evento)=>{
         montaPacoteHigProfunda(evento.target.value / 2)
-        return pacoteAtual;
     })
 })
 
-itemAreaDoPacote.forEach((elemento)=>{
-    elemento.addEventListener("change", (evento)=>{
-        montaPacoteHigProfunda(evento.target.value / 4)
-        itemAtual = {
-            "Objeto": evento.target.dataset.item-area,
-            "Valor para o pacote": (evento.target.value/4)
-        }
-        return pacoteAtual, itemAtual;
-    })
-})
 
 function verificaPacote (){
     console.log(precoDoPacote);

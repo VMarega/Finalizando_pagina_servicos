@@ -1,5 +1,7 @@
-const form = document.querySelector("[data-form]");
+const form = document.querySelectorAll("[data-form]");
 const opcoes = document.querySelectorAll("[data-item]")
+const itemAreaDoPacote = document.querySelectorAll("[data-item-area]"); //tapete e carpete
+const itemAreaDoPacote2 = document.querySelectorAll("[data-item-area2]"); //para a estante de livros
 itensEscolhidos = [];
 let itemAtual = [];
 let pacoteAtual = 0;
@@ -23,17 +25,53 @@ opcoes.forEach((elemento) => {
             "Objeto": objeto,
             "Valor para o pacote": quantidade.value
         }
-
+        console.log(evento)
         montaPacoteHigProfunda(evento.target.value);
         return pacoteAtual;
 
     })
 })
 
+// cálculo da área do tapete automático
+let compTapete = document.querySelector("#comprimento-tapete");
+let largTapete = document.querySelector("#largura-tapete");
+let metragem = document.querySelector("#area-tapete");
+function calculaAreaDoTapete (){
+    metragem.value = compTapete.value * largTapete.value;
+    montaPacoteHigProfunda(metragem.value/4);
+}
+largTapete.addEventListener("change", (evento)=>{
+    calculaAreaDoTapete();
+})
+compTapete.addEventListener("change", (evento)=>{
+    calculaAreaDoTapete();
+})
+
+
+
+
 function montaPacoteHigProfunda(tamanho){
     pacoteAtual = parseInt(tamanho);
     return pacoteAtual;
 }
+
+itemAreaDoPacote2.forEach((elemento)=>{
+    elemento.addEventListener("change", (evento)=>{
+        montaPacoteHigProfunda(evento.target.value / 2)
+        return pacoteAtual;
+    })
+})
+
+itemAreaDoPacote.forEach((elemento)=>{
+    elemento.addEventListener("change", (evento)=>{
+        montaPacoteHigProfunda(evento.target.value / 4)
+        itemAtual = {
+            "Objeto": evento.target.dataset.item-area,
+            "Valor para o pacote": (evento.target.value/4)
+        }
+        return pacoteAtual, itemAtual;
+    })
+})
 
 function verificaPacote (){
     console.log(precoDoPacote);
@@ -69,13 +107,14 @@ function verificaPacote (){
 
 let verifica = false;
 
-form.addEventListener("submit", (evento) => {
+
+form.forEach((elemento)=>{
+elemento.addEventListener("submit", (evento) => {
     evento.preventDefault();
 
     itensEscolhidos.push(itemAtual);
 
     localStorage.setItem("itensEscolhidos", JSON.stringify(itensEscolhidos));
-
     pacoteFinal += pacoteAtual;
     console.log(pacoteFinal)
     if(pacoteFinal > 5){
@@ -89,7 +128,9 @@ form.addEventListener("submit", (evento) => {
         preco.value = parseInt(preco.value) + 0;
     }
 
-    form.reset();
+    form.forEach(element => {
+        element.reset();
+    });
 })
-
+})
 

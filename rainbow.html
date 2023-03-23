@@ -118,14 +118,14 @@
                                             <input type="checkbox" class="btn-check" data-item="Sofá de 2 lugares"
                                                 name="options" id="option1" autocomplete="off" value="1">
                                             <label class="btn rounded-circle lugares-sofa" for="option1">2</label>
-                                            <input type="radio" class="btn-check" data-item="Sofá de 3 lugares" name="options" id="option2"
-                                                autocomplete="off" value="1">
+                                            <input type="radio" class="btn-check" data-item="Sofá de 3 lugares"
+                                                name="options" id="option2" autocomplete="off" value="1">
                                             <label class="btn rounded-circle lugares-sofa" for="option2">3</label>
-                                            <input type="radio" class="btn-check" data-item="Sofá de 4 lugares" name="options" id="option3"
-                                                autocomplete="off" value="2">
+                                            <input type="radio" class="btn-check" data-item="Sofá de 4 lugares"
+                                                name="options" id="option3" autocomplete="off" value="2">
                                             <label class="btn rounded-circle lugares-sofa" for="option3">4</label>
-                                            <input type="radio" class="btn-check" data-item="Sofá de 5 lugares" name="options" id="option4"
-                                                autocomplete="off" value="2">
+                                            <input type="radio" class="btn-check" data-item="Sofá de 5 lugares"
+                                                name="options" id="option4" autocomplete="off" value="2">
                                             <label class="btn rounded-circle lugares-sofa" for="option4">5</label>
                                         </div>
                                     </div>
@@ -189,7 +189,8 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" id="adicionar" data-bs-dismiss="modal">Adicionar</button>
+                                <button type="submit" class="btn btn-primary" id="adicionar"
+                                    data-bs-dismiss="modal">Adicionar</button>
                             </div>
                         </form>
                     </div>
@@ -218,11 +219,11 @@
                                         <h5>TAMANHO</h5>
                                         <div class="bd-example-snippet bd-code-snippet ">
                                             <div class="bd-example mt-5 mb-5">
-                                                    <label class="d-block fs-5 m-3" for="larguraTapete">Largura</label>
-                                                    <input type="number" id="largura-tapete" placeholder="em m">
-                                                    <label class="d-block fs-5 m-3"
-                                                        for="comprimentoTapete">Comprimento</label>
-                                                    <input type="number" id="comprimento-tapete" placeholder="em m">
+                                                <label class="d-block fs-5 m-3" for="larguraTapete">Largura</label>
+                                                <input type="number" id="largura-tapete" placeholder="em m">
+                                                <label class="d-block fs-5 m-3"
+                                                    for="comprimentoTapete">Comprimento</label>
+                                                <input type="number" id="comprimento-tapete" placeholder="em m">
                                                 <div class="area">
                                                     <label class="d-block fs-5 m-3 metragem"
                                                         for="area-tapete">Área</label>
@@ -235,7 +236,8 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" id="adicionar" data-bs-dismiss="modal">Adicionar</button>
+                                <button type="submit" class="btn btn-primary" id="adicionar"
+                                    data-bs-dismiss="modal">Adicionar</button>
                             </div>
                         </form>
                     </div>
@@ -257,8 +259,9 @@
                             <h1 class="modal-title fs-5" id="carpeteModalLabel">CARPETE</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <form action="" class="form-item">
+                        <form action="" data-form>
+                            <div class="modal-body">
+
                                 <article class="m-5" id="buttons">
                                     <div class="justify-content-center">
                                         <h5>TAMANHO</h5>
@@ -267,19 +270,20 @@
                                                 <div class="area">
                                                     <label for="" class="d-block fs-5 m-3">Área</label>
                                                     <input type="number" id="area-carpete"
-                                                        placeholder="Em m², digite apenas nº" data-item-area>
+                                                        placeholder="Em m², digite apenas nº" data-item="Carpete">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </article>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary adicionar"
-                                data-bs-dismiss="modal">Adicionar</button>
-                        </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="adicionar"
+                                    data-bs-dismiss="modal">Adicionar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -299,23 +303,23 @@
                             <h1 class="modal-title fs-5" id="carrinhoModalLabel">CARRINHO</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <form action="" class="form-item">
+                        <form action="" data-form>
+                            <div class="modal-body">
                                 <article class="m-5" id="buttons">
                                     <h5>Quantos Carrinhos Deseja Adicionar?</h5>
                                     <div>
-                                        <label class="btn lugares-sofa" for="optionPoltrona">Quantidade</label>
-                                        <input type="number" data-item name="options" id="optionPoltrona"
-                                            autocomplete="off" data-item-lavagem3>
+                                        <label class="btn lugares-sofa" for="optionCarrinho">Quantidade</label>
+                                        <input type="number" data-item="Carrinho" name="options" id="optionCarrinho"
+                                            autocomplete="off">
                                     </div>
                                 </article>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary adicionar"
-                                data-bs-dismiss="modal">Adicionar</button>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="adicionar"
+                                    data-bs-dismiss="modal">Adicionar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -335,23 +339,23 @@
                             <h1 class="modal-title fs-5" id="poltronaModalLabel">POLTRONA</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <form action="" class="form-item">
+                        <form action="" data-form>
+                            <div class="modal-body">
                                 <article class="m-5" id="buttons">
                                     <h5>Quantas Poltronas Deseja Adicionar?</h5>
                                     <div>
                                         <label class="btn lugares-sofa" for="optionPoltrona">Quantidade</label>
-                                        <input type="number" data-item name="options" id="optionPoltrona"
+                                        <input type="number" data-item="Poltrona" name="options" id="optionPoltrona"
                                             autocomplete="off">
                                     </div>
                                 </article>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary adicionar"
-                                data-bs-dismiss="modal">Adicionar</button>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="adicionar"
+                                    data-bs-dismiss="modal">Adicionar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -422,23 +426,23 @@
                             <h1 class="modal-title fs-5" id="bercoModalLabel">BERÇO</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <form action="" class="form-item">
+                        <form action="" data-form>
+                            <div class="modal-body">
                                 <article class="m-5" id="buttons">
                                     <h5>Quantos Berços Deseja Adicionar?</h5>
                                     <div>
                                         <label class="btn lugares-sofa" for="optionPoltrona">Quantidade</label>
-                                        <input type="number" data-item name="options" id="optionPoltrona"
+                                        <input type="number" data-item="Berço" name="options" id="optionPoltrona"
                                             autocomplete="off">
                                     </div>
                                 </article>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary adicionar"
-                                data-bs-dismiss="modal">Adicionar</button>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="adicionar"
+                                    data-bs-dismiss="modal">Adicionar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -459,23 +463,23 @@
                             <h1 class="modal-title fs-5" id="arCondicionadoModalLabel">AR CONDICIONADO</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <article class="m-5" id="buttons">
-                                <form action="" class="form-item">
+                        <form action="" data-form>
+                            <div class="modal-body">
+                                <article class="m-5" id="buttons">
                                     <h5>Quantos Aparelhos Deseja Adicionar?</h5>
                                     <div>
                                         <label class="btn lugares-sofa" for="optionAr">Quantidade</label>
-                                        <input type="number" data-item name="options" id="optionAr" autocomplete="off"
+                                        <input type="number" data-item="Ar-Condicionado" name="options" id="optionAr" autocomplete="off"
                                             value="0">
                                     </div>
-                                </form>
-                            </article>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary adicionar"
-                                data-bs-dismiss="modal">Adicionar</button>
-                        </div>
+                                </article>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="adicionar"
+                                    data-bs-dismiss="modal">Adicionar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

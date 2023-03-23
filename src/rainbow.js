@@ -14,17 +14,25 @@ let pacote15itens = 400;
 let pacoteFinal = 0;
 let precoDoPacote = 0;
 const preco = document.querySelector("[data-valor]");
-
+let eventoArea = new Event ('change');
 
 opcoes.forEach((elemento) => {
     elemento.addEventListener("change", (evento) => {
         const objeto = evento.target.dataset.item
         const quantidade = evento.target
+        if(objeto === "Tapete" || objeto === "Carpete"){
+        montaPacoteHigProfunda(quantidade.value/4);
+        itemAtual = {
+            "Objeto": objeto,
+            "Valor para o pacote": quantidade.value + "m²"
+        }
+    } else {
+        montaPacoteHigProfunda(quantidade.value)
         itemAtual = {
             "Objeto": objeto,
             "Valor para o pacote": quantidade.value
         }
-        montaPacoteHigProfunda(evento.target.value);
+    }
     })
 })
 
@@ -32,13 +40,9 @@ opcoes.forEach((elemento) => {
 let compTapete = document.querySelector("#comprimento-tapete");
 let largTapete = document.querySelector("#largura-tapete");
 let metragem = document.querySelector("#area-tapete");
-function calculaAreaDoTapete (e){
-   e.value = compTapete.value * largTapete.value;
-    montaPacoteHigProfunda(e.value/4);
-    itemAtual = {
-        "Objeto": e.dataset.item,
-        "Valor para o pacote": parseInt(e.value/4)
-    }
+function calculaAreaDoTapete (){
+    metragem.value = compTapete.value * largTapete.value;
+    metragem.dispatchEvent(eventoArea);
 }
 largTapete.addEventListener("change", (evento)=>{
     calculaAreaDoTapete();
@@ -63,7 +67,6 @@ itemAreaDoPacote2.forEach((elemento)=>{
 
 
 function verificaPacote (){
-    console.log(precoDoPacote);
     if (pacoteFinal == 6){
         preco.value -= precoDoPacote;
         precoDoPacote = pacote5itens + sextoItem;

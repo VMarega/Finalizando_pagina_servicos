@@ -1,7 +1,7 @@
 const form = document.querySelectorAll("[data-form]");
 const opcoes = document.querySelectorAll("[data-item]");
 const itemAreaDoPacote2 = document.querySelectorAll("[data-item-area2]"); //para a estante de livros
-itensEscolhidos = [];
+itensHigienizar = [];
 let itemAtual = {};
 let pacoteAtual = 0;
 let pacote5itens = 200;
@@ -126,9 +126,9 @@ form.forEach((elemento)=>{
 elemento.addEventListener("submit", (evento) => {
     evento.preventDefault();
 
-    itensEscolhidos.push(itemAtual);
+    itensHigienizar.push(itemAtual);
 
-    localStorage.setItem("itensEscolhidos", JSON.stringify(itensEscolhidos));
+    localStorage.setItem("itensHigienizar", JSON.stringify(itensHigienizar));
     pacoteFinal += pacoteAtual;
     console.log(pacoteFinal)
     if(pacoteFinal > 5){

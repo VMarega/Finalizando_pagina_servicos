@@ -1,5 +1,5 @@
 const form = document.querySelectorAll("[data-form]");
-const opcoes = document.querySelectorAll("[data-item]")
+const opcoes = document.querySelectorAll("[data-item]");
 const itemAreaDoPacote2 = document.querySelectorAll("[data-item-area2]"); //para a estante de livros
 itensEscolhidos = [];
 let itemAtual = {};

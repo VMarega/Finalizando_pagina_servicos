@@ -26,18 +26,21 @@ opcoes.forEach((elemento) => {
             "Objeto": objeto,
             "Valor para o pacote": quantidade.value + "m²"
         }
+        ciraElemento(itemAtual)
     } else if (objeto === "Estante de Livros"){
         montaPacoteHigProfunda(quantidade.value/2);
         itemAtual = {
             "Objeto": objeto,
             "Valor para o pacote": quantidade.value + "m²"
         }
+        ciraElemento(itemAtual)
     } else {
         montaPacoteHigProfunda(quantidade.value)
         itemAtual = {
             "Objeto": objeto,
             "Valor para o pacote": quantidade.value
         }
+        ciraElemento(itemAtual)
     }
     })
 })
@@ -119,8 +122,10 @@ function verificaPacote (){
     return precoDoPacote
 }
 
-let verifica = false;
 
+
+
+let verifica = false;
 
 form.forEach((elemento)=>{
 elemento.addEventListener("submit", (evento) => {

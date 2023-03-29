@@ -9,6 +9,7 @@ function ciraElemento (item){
     itemSelecinado.classList.add("d-flex");
     itemSelecinado.classList.add("flex-wrap");
     itemSelecinado.classList.add("flex-row");
-    itemSelecinado.innerHTML += item
+    itemSelecinado.innerHTML += item.objeto
     lista.appendChild(novoItem);
 }
+

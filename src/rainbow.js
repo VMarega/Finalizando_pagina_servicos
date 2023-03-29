@@ -18,29 +18,30 @@ let eventoArea = new Event ('change');
 
 opcoes.forEach((elemento) => {
     elemento.addEventListener("change", (evento) => {
+        console.log(evento)
         const objeto = evento.target.dataset.item
         const quantidade = evento.target
         if(objeto === "Tapete" || objeto === "Carpete"){
         montaPacoteHigProfunda(quantidade.value/4);
         itemAtual = {
-            "Objeto": objeto,
-            "Valor para o pacote": quantidade.value + "m²"
+            "objeto": objeto,
+            "tamanho": quantidade.value + "m²",
         }
-        ciraElemento(itemAtual)
+        
     } else if (objeto === "Estante de Livros"){
         montaPacoteHigProfunda(quantidade.value/2);
         itemAtual = {
-            "Objeto": objeto,
-            "Valor para o pacote": quantidade.value + "m²"
+            "objeto": objeto,
+            "tamanho": quantidade.value + "m²",
         }
-        ciraElemento(itemAtual)
+        
     } else {
         montaPacoteHigProfunda(quantidade.value)
         itemAtual = {
-            "Objeto": objeto,
-            "Valor para o pacote": quantidade.value
+            "objeto": objeto,
+            "tamanho": quantidade.value,
         }
-        ciraElemento(itemAtual)
+        
     }
     })
 })
@@ -132,7 +133,7 @@ elemento.addEventListener("submit", (evento) => {
     evento.preventDefault();
 
     itensHigienizar.push(itemAtual);
-
+    ciraElemento(itemAtual)
     localStorage.setItem("itensHigienizar", JSON.stringify(itensHigienizar));
     pacoteFinal += pacoteAtual;
     console.log(pacoteFinal)
